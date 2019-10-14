@@ -2,7 +2,7 @@ import { app, dialog, shell } from 'electron';
 import GhReleases from 'electron-gh-releases';
 import fetch from 'electron-fetch';
 
-const repo = 'jhen0409/react-native-debugger';
+const repo = 'tomjones116/react-native-debugger';
 
 const getFeed = () =>
   fetch(`https://raw.githubusercontent.com/${repo}/master/auto_updater.json`).then(res =>
@@ -69,7 +69,7 @@ export default (icon, notify) => {
     const detail = `${feed.name}\n\n${feed.notes}`;
     if (notify) {
       const open = notifyUpdateAvailable({ icon, detail });
-      if (open) shell.openExternal('https://github.com/jhen0409/react-native-debugger/releases');
+      if (open) shell.openExternal('https://github.com/tomjones116/react-native-debugger/releases');
     } else if (
       process.env.NODE_ENV === 'production' &&
       process.platform === 'darwin' &&
